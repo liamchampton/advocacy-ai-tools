@@ -11,12 +11,13 @@ module.exports = async function (context, req) {
     // initialize a connection to the cosmos javascript client
     const { CosmosClient } = cosmos;
     const client = new CosmosClient(process.env.COSMOSDB_CONNECTION_STRING);
-    const database = client.database("YouTubeTools");
+    const database = client.database("SocialAssistant");
     const container = database.container("Prompts");
 
     // get all the items from the Prompts container
     const { resources } = await container.items.readAll().fetchAll();
 
+    console.log(resources);
     // return the prompts to the client
     context.res = {
       body: { systemPrompts: resources },

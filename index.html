@@ -105,9 +105,9 @@
                           <option
                             v-for="(prompt, key) in systemPrompts"
                             :key="prompt.id"
-                            :value="prompt.systemPrompt"
+                            :value="prompt.text"
                           >
-                            {{ prompt.promptName }}
+                            {{ prompt.title }}
                           </option>
                         </select>
                       </div>

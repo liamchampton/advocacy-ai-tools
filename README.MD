@@ -23,3 +23,7 @@ swa start --api-location ./api
 ```
 
 If it doesn't start the API, open a separate terminal instance and run `func start`.
+
+### Troubleshooting
+
+If you see a message stating `Worker was unable to load function DownloadContent: 'Cannot find module '@mozilla/readability'`, run `npm install` in the `api` directory.
